@@ -1,0 +1,180 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  background: blueviolet;
+  display: grid;
+  place-items: center;
+}
+.wrapper {
+  width: 40%;
+  max-width: 550px;
+  padding: 15px 0 0;
+  border-radius: 12px;
+  background-color: #fff;
+}
+header {
+  color: blueviolet;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+  padding: 0 10px 10px;
+  margin: 0 0 15px;
+}
+header .left {
+  display: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.wrapper.active header .left {
+  display: block;
+}
+.wrapper.active header .left:hover {
+  transform: scale(1.1);
+}
+.popup_text {
+  text-align: center;
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  padding: 8px;
+  width: 90%;
+  border-radius: 8px;
+  color: #777;
+  display: none;
+}
+.popup_text.pending {
+  display: block;
+  background-color: blueviolet;
+  color: #fff;
+  border: 1px solid #222;
+}
+.popup_text.error {
+  display: block;
+  background-color: pink;
+  color: red;
+  border: 1px solid red;
+}
+.inp {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.wrapper.active .inp {
+  display: none;
+}
+.inp input,
+.inp .separator,
+.btn_location {
+  display: inline-block;
+  margin: 0 auto;
+}
+.inp input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+.inp .separator {
+  width: 90%;
+  height: 2px;
+  background-color: #ddd;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inp .separator::after {
+  content: "or";
+  background-color: #fff;
+  padding: 6px;
+  color: #777;
+  margin: 0 0 2px;
+}
+.btn_location {
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  background: blueviolet;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  opacity: 0.5;
+  transition: 0.3s ease-in-out;
+}
+.btn_location:hover {
+  opacity: 1;
+}
+.weather {
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+.wrapper.active .weather {
+  display: flex;
+}
+.weather img {
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+}
+.weather .temp {
+  font-size: 45px;
+  font-weight: 700;
+}
+.weather .average,
+.weather .position {
+  color: #777;
+  font-size: 20px;
+}
+.humidity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+  border-top: 1px solid #ddd;
+}
+.feel,
+.humid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  width: 50%;
+}
+.humid {
+  border-left: 1px solid #ddd;
+}
+.feel i,
+.humid i {
+  color: blueviolet;
+  font-size: 22px;
+}
+.feel p,
+.humid p {
+  display: flex;
+  flex-direction: column;
+}
+.feel p span:first-of-type,
+.humid p span:first-of-type {
+  font-weight: 700;
+  font-size: 18px;
+}
+.feel p span:last-of-type,
+.humid p span:last-of-type {
+  color: #777;
+}
